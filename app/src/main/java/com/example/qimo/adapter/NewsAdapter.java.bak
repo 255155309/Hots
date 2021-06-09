@@ -1,0 +1,99 @@
+package com.example.qimo.adapter;
+
+import android.content.Context;
+import android.content.Intent;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.example.qimo.ContentActivity;
+import com.example.qimo.R;
+import com.example.qimo.bean.News;
+
+import java.util.List;
+
+/**
+ * Created by Administrator on 2021/4/21.
+ */
+
+public class NewsAdapter extends ArrayAdapter {
+    private int item_layout_id;
+    public NewsAdapter(Context context, int resource, List objects) {
+        super(context, resource, objects);
+        item_layout_id=resource;
+    }
+
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        View view;
+        final ViewHolder holder;
+        if(convertView==null){
+            view= LayoutInflater.from(getContext())
+                    .inflate(item_layout_id,parent,false);
+            holder=new ViewHolder(view);
+            view.setTag(holder);
+        }else{
+            view=convertView;
+            holder= (ViewHolder) view.getTag();
+
+        }
+        News news= (News) getItem(position);
+        holder.tv_title.setText(news.getTitle());
+        holder.tv_source.setText(news.getSource());
+        holder.tv_time.setText(news.getTime());
+        holder.tv_digest.setText(news.getDigest());
+
+        final String content_url=news.getContent_url();
+
+        holder.tv_digest.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(getContext(), ContentActivity.class);
+                intent.putExtra("content_url",content_url);
+
+
+                getContext().startActivity(intent);
+            }
+        });
+
+        return view;
+    }
+    public class ViewHolder{
+        TextView tv_title;
+        TextView tv_source;
+        TextView tv_time;
+        TextView tv_digest;
+        ImageView iv_image;
+        public ViewHolder(View view){
+            tv_title=view.findViewById(R.id.tv_title);
+            tv_source=view.findViewById(R.id.tv_source);
+            tv_time=view.findViewById(R.id.tv_time);
+            tv_digest=view.findViewById(R.id.tv_digest);
+
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

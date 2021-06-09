@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Main2Activity">
+<!--    主屏幕中显示的内容-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/ly_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_above="@id/rg_tab_bar"
+            android:layout_below="@id/toolbar">
+            <!--顶部系统栏-->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/black"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:popupTheme="@style/Theme.AppCompat.Light">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/black"
+                    android:textColor="#fff"
+                    android:layout_gravity="center"
+                    android:text=""
+                    android:textSize="20sp"/>
+            </androidx.appcompat.widget.Toolbar>
+
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:id="@+id/tv_username"-->
+    <!--            android:text="userName"-->
+    <!--            android:textSize="30sp"/>-->
+    <!--        <Button-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:id="@+id/bt_setting"-->
+    <!--            android:text="设置"/>-->
+        </FrameLayout>
+
+<!--        分割线-->
+<!--        <View-->
+<!--            android:id="@+id/div_tab_bar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="1dp"-->
+<!--            android:background="#979797"-->
+<!--            android:layout_marginBottom="2dp"/>-->
+        <!--    底部导航栏——单选按钮组-->
+        <RadioGroup
+            android:id="@+id/rg_tab_bar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="#F4F4F4"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/rb_home"
+                style="@style/tab_menu_bar"
+                android:drawableTop="@drawable/tab_menu_home"
+                android:text="Hot"/>
+            <RadioButton
+                android:id="@+id/rb_blog"
+                style="@style/tab_menu_bar"
+                android:drawableTop="@drawable/tab_menu_blog"
+                android:text="发现"/>
+            <RadioButton
+                android:id="@+id/rb_bbs"
+                style="@style/tab_menu_bar"
+                android:drawableTop="@drawable/tab_menu_hottest"
+                android:text="热点"/>
+            <RadioButton
+                android:id="@+id/rb_mine"
+                style="@style/tab_menu_bar"
+                android:drawableTop="@drawable/tab_menu_mine"
+                android:text="我的"/>
+
+        </RadioGroup>
+
+    </LinearLayout>
+    <!--    侧滑菜单-->
+<!--    <com.google.android.material.navigation.NavigationView-->
+<!--        android:id="@+id/navView"-->
+<!--        android:layout_width="250dp"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_gravity="right"-->
+<!--        app:menu="@menu/nav_menu"-->
+<!--        app:headerLayout="@layout/nav_header"/>-->
+
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -1,0 +1,73 @@
+package com.example.qimo.task;
+
+import android.os.AsyncTask;
+
+import com.example.qimo.bean.News;
+import com.example.qimo.utils.Utils;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import okhttp3.Response;
+
+/**
+ * Created by Administrator on 2021/4/21.
+ */
+
+public class NewsTask extends AsyncTask<String,Void,ArrayList<News>> {
+    CallBack back;
+
+    public NewsTask(CallBack back) {
+        this.back = back;
+    }
+
+    /**
+     *
+     * @param strings:可变参数；参数个数不确定，根据调用该方法时所传数据的个数而定
+     *               使用可变参数的格式参照数组。
+     * @return
+     */
+    @Override
+    protected ArrayList<News> doInBackground(String... strings) {
+        Response response=Utils.execute(strings[0]);
+        try {
+            String jsonData=response.body().string();
+            ArrayList<News> result=Utils.parse(jsonData);
+            return  result;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    @Override
+    protected void onPostExecute(ArrayList<News> newses) {
+        super.onPostExecute(newses);
+        if (back!=null)back.getResult(newses);
+    }
+
+    public interface CallBack{
+        public void getResult(ArrayList<News> result);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

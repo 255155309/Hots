@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#F8F8F8">
+
+        <!--顶部系统栏-->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/black"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/Theme.AppCompat.Light">
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/black"
+                android:textColor="#fff"
+                android:layout_gravity="center"
+                android:text="首页"
+                android:textSize="20sp"/>
+        </androidx.appcompat.widget.Toolbar>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F1F1F1">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="5dp">
+            <EditText
+                android:id="@+id/et_find"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="?android:attr/textViewStyle"
+                android:layout_weight="1"
+                android:hint="搜索"
+                android:gravity="center"
+                android:maxLines="1"
+                android:background="#FFFFFF" />
+<!--            <Button-->
+<!--                android:id="@+id/bt_friend_find"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="查找" />-->
+        </androidx.cardview.widget.CardView>
+
+<!--        <Button-->
+<!--            android:id="@+id/bt_friend_add"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="添加" />-->
+
+    </LinearLayout>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/friend_list"
+        android:choiceMode="multipleChoice"
+        android:divider="@null"/>
+
+</LinearLayout>

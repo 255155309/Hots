@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.qimo">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Qimo"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".BlogAddActivity"></activity>
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".SideSlip" />
+        <activity android:name=".ChangePassword" />
+        <activity android:name=".Msg.ChatActivity" />
+        <activity android:name=".ViewPages.BbsvpActivity" />
+<!--        <activity android:name=".Fragment.BbsFragment" />-->
+<!--        <activity android:name=".Fragment.MineFragment" />-->
+        <activity android:name=".Main2Activity" />
+        <activity android:name=".ContentActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

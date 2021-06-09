@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FAFAFA">
+
+
+    <LinearLayout
+        android:id="@+id/menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_boder_bottom_line">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iconImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/headpo"
+            android:layout_marginLeft="10dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/new_xx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="你好！"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:layout_alignBottom="@id/friend_name"/>
+            <TextView
+                android:id="@+id/friend_name"
+                android:layout_width="280dp"
+                android:layout_height="60dp"
+                android:text="名称"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:paddingTop="5dp"
+                android:paddingLeft="10dp"
+                android:background="#00000000" />
+            <Button
+                android:id="@+id/del"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:text="删除"
+                android:layout_toRightOf="@+id/friend_name"
+                android:background="@drawable/bg_personal_btn_login_out" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

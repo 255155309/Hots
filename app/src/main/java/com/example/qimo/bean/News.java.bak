@@ -1,0 +1,71 @@
+package com.example.qimo.bean;
+
+/**
+ * Created by Administrator on 2021/4/21.
+ */
+
+public class News {
+    private String title;
+    private String source;
+    private String time;
+    private String digest;
+    private String image_url;
+    private String content_url;
+
+    public News(String title, String source, String time, String digest, String image_url, String content_url) {
+        this.title = title;
+        this.source = source;
+        this.time = time;
+        this.digest = digest;
+        this.image_url = image_url;
+        this.content_url = content_url;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public String getDigest() {
+        return digest;
+    }
+
+    public String getImage_url() {
+        return image_url;
+    }
+
+    public String getContent_url() {
+        return content_url;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public void setDigest(String digest) {
+        this.digest = digest;
+    }
+
+    public void setImage_url(String image_url) {
+        this.image_url = image_url;
+    }
+
+    public void setContent_url(String content_url) {
+        this.content_url = content_url;
+    }
+}
