@@ -7,21 +7,20 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginBottom="10dp"
         app:cardCornerRadius="3dp"
         app:cardElevation="3dp">
         <LinearLayout
             android:id="@+id/blog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-            <ImageView
+<!--            头像-->
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:scaleType="fitXY"
                 android:src="@drawable/headpo"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="10dp" />
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -37,6 +36,32 @@
                     android:paddingTop="5dp"
                     android:paddingLeft="10dp"
                     android:background="#00000000" />
+<!--                时间型号-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:paddingLeft="10dp"
+                        android:id="@+id/blog_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|left"
+                        android:text="2021-06-06 23:07:13" />
+                    <TextView
+                        android:paddingLeft="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|left"
+                        android:text="来自" />
+                    <TextView
+                        android:paddingLeft="2dp"
+                        android:id="@+id/blog_modle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|left"
+                        android:textColor="#113185"
+                        android:text="型号" />
+                </LinearLayout>
                 <TextView
                     android:id="@+id/blog_content"
                     android:layout_width="280dp"
@@ -48,45 +73,81 @@
                     android:paddingLeft="10dp"
                     android:textSize="18sp"
                     android:textColor="#000" />
+<!--                菜单-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingLeft="10dp">
+                    android:orientation="vertical">
                     <TextView
-                        android:id="@+id/blog_time"
-                        android:layout_width="wrap_content"
-                        android:layout_height="40dp"
-                        android:gravity="center|left"
-                        android:text="2021-06-06 23:07:13" />
+                        android:layout_width="match_parent"
+                        android:layout_height="2px"
+                        android:layout_marginTop="5dp"
+                        android:background="#BFBFBF"/>
+<!--                    菜单-->
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="right">
-                        <TextView
+                        android:layout_height="wrap_content">
+<!--                        点赞-->
+                        <LinearLayout
                             android:id="@+id/zan"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:gravity="center"
-                            android:text="点赞" />
-                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/blog_zan"
+                                android:layout_gravity="center"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:gravity="center"
+                                android:text="赞" />
+                        </LinearLayout>
+<!--                        评论-->
+                        <LinearLayout
                             android:id="@+id/comment"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:gravity="center"
-                            android:text="评论" />
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/blog_pinglun"
+                                android:layout_gravity="center"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:gravity="center"
+                                android:text="评论" />
+                        </LinearLayout>
+<!--                        删除-->
+                        <LinearLayout
+                            android:id="@+id/del"
+                            android:visibility="gone"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/blog_shanchu"
+                                android:layout_gravity="center"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:gravity="center"
+                                android:text="删除"
+                                android:layout_gravity="bottom" />
+                        </LinearLayout>
 
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-            <TextView
-                android:id="@+id/del"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:gravity="center"
-                android:text="删除"
-                android:layout_gravity="bottom"
-                android:visibility="gone"/>
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>

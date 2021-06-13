@@ -3,12 +3,14 @@ package com.example.qimo.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -57,9 +59,12 @@ public class BlogAdapter extends ArrayAdapter {
         holder.blog_name.setText(blogs.getBlogName());
         holder.blog_content.setText(blogs.getBlogContent());
         holder.blog_time.setText(blogs.getBlogTime());
+        holder.blog_modle.setText(Build.MANUFACTURER);
         //如果是自己发的就显示删除按钮
         if (blogs.getBlogName().equals(account)){
             holder.del.setVisibility(view.VISIBLE);
+        }else{
+            holder.del.setVisibility(view.GONE);
         }
         //删除blog
         holder.del.setOnClickListener(new View.OnClickListener() {
@@ -82,6 +87,12 @@ public class BlogAdapter extends ArrayAdapter {
                 Toast.makeText(getContext(), "您点击了评论", Toast.LENGTH_SHORT).show();
             }
         });
+        holder.zan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "您点击了赞", Toast.LENGTH_SHORT).show();
+            }
+        });
         //final String hot_word_url=words.getHot_word_url();
         //单击热搜时打开
 //        holder.blog_content.setOnClickListener(new View.OnClickListener(){
@@ -102,13 +113,16 @@ public class BlogAdapter extends ArrayAdapter {
         return view;
     }
     public class ViewHolder{
-        TextView blog_name,blog_content,comment,del,blog_time;
+        TextView blog_name,blog_content,blog_time,blog_modle;
+        LinearLayout zan,comment,del;
         public ViewHolder(View view){
             blog_name=view.findViewById(R.id.blog_name);
             blog_content=view.findViewById(R.id.blog_content);
+            zan=view.findViewById(R.id.zan);
             comment=view.findViewById(R.id.comment);
             del=view.findViewById(R.id.del);
             blog_time=view.findViewById(R.id.blog_time);
+            blog_modle=view.findViewById(R.id.blog_modle);
             spf= PreferenceManager.getDefaultSharedPreferences(getContext());
             account=spf.getString("account","");//获取当前登录的账号
         }
