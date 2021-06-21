@@ -24,7 +24,6 @@ import java.util.ArrayList;
 public class HomeFragment extends Fragment {
     private String content;
     private ListView friend_list;
-    private Button bt_friend_add;
     private EditText et_find;
     SharedPreferences spf;
 //    private SQLiteDatabase db;
@@ -41,9 +40,8 @@ public class HomeFragment extends Fragment {
         //设置顶部导航栏标题
         title.setText(content);
 
-        friend_list=view.findViewById(R.id.friend_list);
-        bt_friend_add=view.findViewById(R.id.bt_friend_add);
-        et_find=view.findViewById(R.id.et_find);
+        friend_list=view.findViewById(R.id.friend_list);//好友列表
+        et_find=view.findViewById(R.id.et_find);//搜索框
 
        //设置搜索栏失去焦点
         et_find.setFocusable(false);
@@ -71,7 +69,7 @@ public class HomeFragment extends Fragment {
     //显示所有好友
     private void friendAll() {
         Friend[] friends=dbOpener.friendAll();
-        //新建数组存储好友，用于更新setAdapter
+        //新建数组存储好友
         ArrayList<Friend> friendList=new ArrayList<Friend>();
         if (friends==null){
             FriendAdapter friendAdapter=new FriendAdapter(getContext(),

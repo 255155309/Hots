@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/E:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/thumb_up_alt/baseline_thumb_up_alt_24.xml" />
+                                      <entry key="url" value="file:/$PROJECT_DIR$/../../../Program%20Files/Android/Sdk/icons/material/materialicons/error_outline/baseline_error_outline_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,7 +28,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_vip" />
+                            <entry key="color" value="cfcfcf" />
+                            <entry key="outputName" value="ic_code" />
                             <entry key="sourceFile" value="E:\Study\Android\qimo" />
                           </map>
                         </option>

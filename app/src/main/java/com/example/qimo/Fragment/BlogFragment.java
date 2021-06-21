@@ -56,7 +56,10 @@ public class BlogFragment extends Fragment {
             new BlogTask(new BlogTask.CallBack() {
                 @Override
                 public void getResult(ArrayList<Blog> result) {
-                    list.addAll(result);
+                    //list.addAll(result);
+                    for(Blog i:result){
+                        list.add(0,i);
+                    }//遍历列表，最新发布的在最上面
                     adapter.notifyDataSetChanged();
                 }
             }).execute(url);

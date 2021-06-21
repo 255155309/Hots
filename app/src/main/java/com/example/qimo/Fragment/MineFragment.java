@@ -3,6 +3,8 @@ package com.example.qimo.Fragment;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,32 +14,26 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
+import android.widget.ImageView;
+
+import android.widget.TextView;
+
+
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+
 import com.example.qimo.ChangePassword;
-import com.example.qimo.Db.Task;
+
 import com.example.qimo.LoginActivity;
 import com.example.qimo.R;
-import com.example.qimo.bean.Code;
 
-import java.util.Random;
-
-import jp.wasabeef.glide.transformations.BlurTransformation;
 
 
 public class MineFragment extends Fragment {
-    private String content;
+
+    private String content  ;
     private TextView mine_name;
     private ImageView h_back;
     private CardView bt_login_out,change_password;
@@ -50,6 +46,8 @@ public class MineFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.mine,container,false);
+        //动态注册广播接收器
+
         //TextView title = (TextView) view.findViewById(R.id.title);
         //h_back=view.findViewById(R.id.h_back);
         //title.setText(content);
@@ -94,4 +92,5 @@ public class MineFragment extends Fragment {
 
         return view;
     }
+
 }

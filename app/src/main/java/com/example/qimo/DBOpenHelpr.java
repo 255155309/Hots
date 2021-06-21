@@ -26,12 +26,12 @@ public class DBOpenHelpr extends SQLiteOpenHelper {
         String sql="create table friend ("
                 +"id integer primary key autoincrement,"
                 +"name text)";
-        String sql1="create table chat ("
-                +"id integer primary key autoincrement,"
-                +"account text,"
-                +"account text)";
+//        String sql1="create table chat ("
+//                +"id integer primary key autoincrement,"
+//                +"account text,"
+//                +"account text)";
         db.execSQL(sql);
-        db.execSQL(sql1);
+        //db.execSQL(sql1);
 
         Toast.makeText(context, "数据表创建成功", Toast.LENGTH_SHORT).show();
     }
@@ -59,16 +59,15 @@ public class DBOpenHelpr extends SQLiteOpenHelper {
             friends[i]=new Friend();
             //获取名称
             friends[i].setName(cursor.getString(cursor.getColumnIndex("name")));
-
             cursor.moveToNext();//下一条记录
         }
-        return friends;
+        return friends;//返回好友名称的数组
     }
 
 
     //查找一个好友
     public Friend[] friendFind(String name) throws SQLiteException{
-        System.out.println(name+"============db");
+        //System.out.println(name+"============db");
         open();
         Cursor cursor=db.query("friend",null,
                 "name=?",new String[]{name},

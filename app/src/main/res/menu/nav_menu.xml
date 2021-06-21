@@ -2,13 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 <group android:checkableBehavior="single">
     <item
-        android:id="@+id/navCall"
+        android:id="@+id/personal_info"
         android:icon="@drawable/dot_0"
-        android:title="Call"/>
+        android:title="个人信息"/>
     <item
-        android:id="@+id/nav_Friends"
+        android:id="@+id/account_safe"
         android:icon="@drawable/dot_0"
-        android:title="Friends"/>
+        android:title="账号安全"/>
     <item
         android:id="@+id/nav_about"
         android:icon="@drawable/dot_0"

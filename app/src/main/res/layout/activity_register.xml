@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegisterActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#F3F3F3"
+    android:gravity="center">
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,7 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/et_phone"
-                android:drawableLeft="@drawable/ic_login_password"
+                android:drawableLeft="@drawable/ic_phone"
                 android:hint="请输入手机号"
                 android:singleLine="true" />
             <LinearLayout
@@ -52,7 +54,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/et_code"
-                    android:drawableLeft="@drawable/ic_login_password"
+                    android:drawableLeft="@drawable/ic_code"
                     android:hint="请输入验证码"
                     android:singleLine="true"/>
                 <LinearLayout

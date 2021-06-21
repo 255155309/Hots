@@ -72,7 +72,7 @@ public class FriendAdapter extends ArrayAdapter {
                 dbOpener.open();
                 //获取当前好友名称
                 String name=friends.getName();
-                System.out.println(name+"====================");
+                //System.out.println(name+"====================");
                 //执行删除
                 long result=dbOpener.delOne(name);
                 if (result>0){

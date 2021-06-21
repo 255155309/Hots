@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    android:background="#F3F3F3">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -70,6 +71,11 @@
                                 android:layout_height="wrap_content"
                                 android:id="@+id/cb_rember"
                                 android:text="记住密码"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="忘记密码？"
+                                android:textColor="#266AE3"/>
 
                         </LinearLayout>
                     <Button
