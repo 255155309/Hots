@@ -31,10 +31,10 @@ public class FindPassword extends AppCompatActivity {
             public void onClick(View v) {
                 String account=find_account.getText().toString();//获取账号
                 String code=find_cancle.getText().toString();//获取验证码
-                String url="https://www.wiod.cn/changepswd/?account="+account+"&oldpassword="+oldPassword+"&newpassword="+newPassword;
+                String url="https://www.wiod.cn/changepswd/?account="+account+"&oldpassword="+account+"&newpassword="+account;
                 if (account.equals("") || code.equals("")){
                     Toast.makeText(FindPassword.this, "所有项不能为空！", Toast.LENGTH_SHORT).show();
-                }else if(oldPassword.equals(newPassword)){
+                }else if(account.equals(account)){
                     Toast.makeText(FindPassword.this, "新密码不能和原密码相等！", Toast.LENGTH_SHORT).show();
                 }else{
                     new Task(new Task.CallBack() {
